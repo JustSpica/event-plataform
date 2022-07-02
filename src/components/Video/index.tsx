@@ -1,6 +1,7 @@
+import { DiscordLogo, Lightning, FileArrowDown } from "phosphor-react";
+import { TailSpin } from 'react-loader-spinner';
 import { DefaultUi, Player, Youtube } from "@vime/react";
 import { gql, useQuery } from "@apollo/client";
-import { DiscordLogo, Lightning, FileArrowDown } from "phosphor-react";
 
 import { ButtonLink, Card } from "components";
 
@@ -49,7 +50,9 @@ export function Video({ slug }: VideoProps) {
   return (
     <div className="flex-1">
       {!data ? (
-        <p>Loading...</p>
+        <div className="flex h-full items-center justify-center">
+          <TailSpin color="#81D8F7"/>
+        </div>
       ) : (
         <>
           <div className="bg-black flex justify-center">
